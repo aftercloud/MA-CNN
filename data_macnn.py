@@ -21,8 +21,8 @@ class MacnnDataset(Dataset):
         self.y = y
 
     def __getitem__(self, index):
-        img = torch.tensor(cv2.resize(x[index], (448, 448))).float().unsqueeze(0)
-        label = y[index]
+        img = torch.tensor(cv2.resize(self.x[index], (448, 448))).float().unsqueeze(0)
+        label = self.y[index]
         return img, label
 
     def __len__(self):
